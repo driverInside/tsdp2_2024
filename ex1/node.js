@@ -30,9 +30,32 @@ function printList(head) {
     aux = aux.next;
     str = str + aux.value + ' -> ';
   }
-  return str
+  return str;
 }
 
+/**
+ * addAfter
+ * 
+ * @param {Node} head 
+ * @param {number} target 
+ * @param {number} value 
+ */
+function addAfter(head, target, value) {
+  let aux = head;
+  while (aux.next) {
+    if (aux.value === target) {
+      const newNode = new Node(value);
+
+      newNode.next = aux.next;
+      aux.next = newNode;
+    }
+    aux = aux.next;
+  }
+}
+
+// 5 -> 3 -> 7 -> 42
 console.log(printList(one));
 
-// 5 -> 3 -> 7 ->
+addAfter(one, 7, 13);
+// 5 -> 3 -> 7 -> 13 -> 42
+console.log(printList(one));
