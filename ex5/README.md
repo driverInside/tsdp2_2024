@@ -1,7 +1,6 @@
 # ex5
 
-## Install dependencies
-
+## Install enviroment
 ### Docker
 
 Download and install Docker
@@ -22,4 +21,24 @@ Download and install the official MongoDB GUI client
 
 https://www.mongodb.com/try/download/compass
 
+### Redis container
 
+```sh
+docker run --name redis -p 6379:6379 -d redis
+```
+
+## Install dependencies
+
+```sh
+$ npm i
+```
+
+## Resources
+
+Redis
+
+https://redis.io/
+
+Docker hub
+
+https://hub.docker.com
