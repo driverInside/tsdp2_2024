@@ -1,10 +1,11 @@
 const api = require('./api');
 
+console.log(api.getUrl('characters'));
+console.log(api.getUrl('locations'));
+
 async function init() {
   const characters = await api.getCharacters();
-  const locations = await api.getLocations();
-  console.log(characters);
-  console.log(locations);
+  console.log(characters)
 }
 
 init();

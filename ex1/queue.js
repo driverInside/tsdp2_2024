@@ -1,23 +1,45 @@
 const LinkedList = require('./list');
+const Node = require('./node');
 
-class Node {
-  constructor(value) {
-    this.value = value;
-    this.next = null;
+class Queue extends LinkedList {
+  constructor (head) {
+    super(head);
+  }
+
+  queue(value) {
+    this.addEnd(value);
+  }
+
+  dequeue() {
+    return this.removeStart();
+  }
+
+  toString() {
+    let str = ''
+    let aux = this.head;
+
+    str = aux.value + ' <- ';
+
+    while (aux.next !== null) {
+      aux = aux.next;
+      str = str + aux.value + ' <- ';
+    }
+    console.log(str);
   }
 }
 
-class Queue extends LinkedList {
-  
-}
-
 const one = new Node(5);
-const list = new LinkedList(one);
+const queue = new Queue(one);
 
-list.toString();
-list.addStart(2);
-list.addEnd(23);
-list.toString();
+queue.toString();
+queue.queue(23);
+queue.queue(7);
 
-console.log(list.hasValue(34)); // False
-console.log(list.hasValue(2)); // true
+const el = queue.dequeue();
+
+console.log(`El elemento eliminado es el ${el.value}`);
+
+queue.toString();
+
+console.log(queue.hasValue(34)); // False
+console.log(queue.hasValue(2)); // true

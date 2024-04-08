@@ -16,7 +16,6 @@ describe('Coordinates', () => {
   it('should return an empty array', () => {
     expect(coordinates([])).toStrictEqual([]);
   });
-
   it('should return an array with two elements', () => {
     expect(coordinates(list)).toHaveLength(3);
   });

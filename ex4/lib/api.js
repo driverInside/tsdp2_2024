@@ -1,7 +1,9 @@
 const axios = require('axios');
 
 const getCharacters = async (url) => {
-  return axios.get('url');
+  const response = await axios.get(url);
+
+  return response.data.results;
 };
 
 module.exports = {

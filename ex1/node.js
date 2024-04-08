@@ -54,10 +54,10 @@ function addAfter(head, target, value) {
 }
 
 // 5 -> 3 -> 7 -> 42
-console.log(printList(one));
+// console.log(printList(one));
 
 addAfter(one, 7, 13);
 // 5 -> 3 -> 7 -> 13 -> 42
-console.log(printList(one));
+// console.log(printList(one));
 
 module.exports = Node;

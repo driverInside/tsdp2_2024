@@ -15,20 +15,65 @@ function getUrl(key) {
 async function getCharacters() {
   const url = getUrl('characters');
 
-  const characters = await fetch(url).then(result => result.json());
-  return characters;
+  const data = await fetch(url)
+    .then(result => result.json());
+
+  /*
+  { info: {}, results: [{ name: 'rick'}]}
+  
+  */
+  const names = data.results.map(character => character.name)
+  
+  return names;
 }
 
-async function getLocations() {
-  const url = getUrl('locations');
 
-  const locations = await fetch(url)
-    .then(result => result.json())
 
-  return locations;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// async function getCharacters() {
+//   const url = getUrl('characters');
+
+//   const characters = await fetch(url).then(result => result.json());
+//   return characters;
+// }
+
+// async function getLocations() {
+//   const url = getUrl('locations');
+
+//   const locations = await fetch(url)
+//     .then(result => result.json())
+
+//   return locations;
+// }
 
 module.exports = {
   getCharacters,
-  getLocations,
+  // getLocations,
+  getUrl,
 };

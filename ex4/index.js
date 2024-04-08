@@ -1,7 +1,17 @@
 const CharacterService = require('./services/characters');
 const api = require('./lib/api'); // dependencia
 
-const characterService = new CharacterService(api);
 
-console.log(characterService.gerUrl('characters'));
+async function init () {
+  const characterService = new CharacterService(api);
+  const url = characterService.gerUrl('characters');
 
+  console.log(url);
+  const results = await characterService.getCharacters(url);
+
+  const names = results.map((character) => character.name);
+
+  console.log(names);
+}
+
+init();

@@ -3,16 +3,28 @@ module.exports = function coordinates(arr) {
     return [];
   }
 
-  const result = [];
-  
-  // arr.forEach((coordinate) => {
-  //   console.log(coordinate);
-  // });
-  
-  
+  // const result = [];
+
   // for (let i = 0; i < arr.length; i++) {
-  //   console.log(arr[i]);
+  //   if (
+  //     (arr[i][0] > 0 && arr[i][1] > 0) ||           // 1er cuadrante
+  //     (arr[i][0] < 0 && arr[i][1] < 0)              // 2do cuadrante
+  //   ) {
+  //     result.push(arr[i]);
+  //   }
   // }
 
-  return result;
-}
+  // arr.forEach((coordinate) => {
+  //   if (
+  //     (coordinate[0] > 0 && coordinate[1] > 0) ||
+  //     (coordinate[0] < 0 && coordinate[1] < 0)
+  //   ) {
+  //     result.push(coordinate);
+  //   }
+  // });
+
+  return arr.filter((coordinate) => {
+    return (coordinate[0] > 0 && coordinate[1] > 0) ||
+    (coordinate[0] < 0 && coordinate[1] < 0)
+  });
+};

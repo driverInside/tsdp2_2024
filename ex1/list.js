@@ -50,18 +50,28 @@ class LinkedList {
     }
     return false;
   }
+
+  removeStart() {
+    const aux = this.head;
+
+    this.head = this.head.next;
+    this.size--;
+
+    aux.next = null;
+    return aux;
+  }
 }
 
 
 const one = new Node(5);
 const list = new LinkedList(one);
 
-list.toString();
-list.addStart(2);
-list.addEnd(23);
-list.toString();
+// list.toString();
+// list.addStart(2);
+// list.addEnd(23);
+// list.toString();
 
-console.log(list.hasValue(34)); // False
-console.log(list.hasValue(2)); // true
+// console.log(list.hasValue(34)); // False
+// console.log(list.hasValue(2)); // true
 
 module.exports = LinkedList;

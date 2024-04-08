@@ -1,5 +1,3 @@
-
-
 const RICK_AND_MORTY_API_URL = 'https://rickandmortyapi.com/api/';
 
 class Character {
@@ -19,9 +17,8 @@ class Character {
     return `${RICK_AND_MORTY_API_URL}${this.endpoints[key]}`;
   }
 
-
-  getCharacters() {
-    
+  async getCharacters(url) {
+    return this.api.getCharacters(url);
   }
 }
 
