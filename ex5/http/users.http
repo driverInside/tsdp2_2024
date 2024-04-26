@@ -1,0 +1,18 @@
+GET http://localhost:5000/users
+
+###
+
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+    "name": "Diana",
+    "username": "diana_1234",
+    "password": "12345",
+    "email": "solo_diana@gmail.com",
+    "address": {
+        "street": "Palmera Imperial",
+        "number": 65478,
+        "zip": "15987"
+    }
+}
